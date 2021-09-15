@@ -56,10 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 '                                  ',
                 '                                  ',
                 '                                  ',
-                '                                  ',
-                '                                  ',
-                '                                  ',
-                '                                  ',
                 '      %  =*=%=                    ',
                 '                    -+            ',
                 '              ^  ^  ()            ',
@@ -75,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 '£                          x x x        £',
                 '£                        x x x x  x   -+£',
                 '£               z   z  x x x x x  x   ()£',
-                '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!',
+                '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
             ]
         ]
 
@@ -199,19 +195,20 @@ document.addEventListener("DOMContentLoaded", () => {
         })
 
 
+
         //Lo que sale de la caja sorpresa (hongo u moneda)
         player.on('headbump', (obj) => {
             //Si es una moneda
             if (obj.is('coin-surprise')) {
                 gameLevel.spawn('$', obj.gridPos.sub(0, 1));
-                destroy(obj)    //Destruye la caja
-                gameLevel.spawn('}', obj.gridPos.sub(0, 0));  //Para que aparezca en el lugar de la caja
+                destroy(obj);    //Destruye la caja
+                gameLevel.spawn('}', obj.gridPos.sub(0, 0));  //Para que aparezca en el lugar de la caja y sacar el ? (marcar como usada)
             }
             //Si es un hongo
             if (obj.is('mushroom-surprise')) {
                 gameLevel.spawn('#', obj.gridPos.sub(0, 1)); //Queremos que salga el hongo
-                destroy(obj)    //Destruye la caja
-                gameLevel.spawn('}', obj.gridPos.sub(0, 0));  //Para que aparezca en el lugar de la caja
+                destroy(obj);    //Destruye la caja
+                gameLevel.spawn('}', obj.gridPos.sub(0, 0));  //Para que aparezca en el lugar de la caja y sacar el ? (marcar como usada)
             }
         });
 
